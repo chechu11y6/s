@@ -36,11 +36,14 @@ Algoritmo porcentaje_aumento
 		
 	FinSi
 	
-	 
+	Repetir
+		
+		
 		Escribir "ingrese el tipo de gasto"
 		Escribir "1- tarjetas , 2- servicios, 3- arreglos, 4-supermercado, 5-salir (doble enter luego)"
 		Leer gasto
-		Escribir "ingrese el monto"
+		
+		Escribir "ingrese el monto" //tengo un problema cuando ingresa 5 si no es la primera opción pide monto
 		Leer monto
 		
 		si gasto=5
@@ -59,7 +62,7 @@ Algoritmo porcentaje_aumento
 					Escribir sueldof
 				3:
 					sueldof=sueldof-monto
-					
+					Escribir sueldof
 				4:
 					sueldof=sueldof-monto
 					
@@ -70,10 +73,11 @@ Algoritmo porcentaje_aumento
 					
 			FinSegun
 		FinSi
-		
-		Escribir "sueldo restante=  ",sueldof
-		
-	FinMientras
+	Hasta Que gasto=5
+	Escribir "sueldo restante=  ",sueldof
+	
 	
 	
 FinAlgoritmo
+
+
