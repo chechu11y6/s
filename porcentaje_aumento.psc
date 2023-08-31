@@ -1,6 +1,7 @@
 Algoritmo porcentaje_aumento
 	Definir porcentaje, sueldoi, sueldof, suma, meses, aumento, x, gastos, gasto, monto, suscripcion, totalsuscrip Como Real
-	
+	Definir contrasenia, contrasenia1 Como cadena
+		
 	porcentaje=0
 	suma=0
 	sueldoi=0
@@ -16,22 +17,45 @@ Algoritmo porcentaje_aumento
 	monto=0
 	suscripcion=0
 	totalsuscrip=0
+	contrasenia = "Chechu52"
 	
-	Escribir "ingrese sueldo"
+	
+	Escribir "Ingrese su contraseña"
+	Leer contrasenia1
+	si contrasenia=contrasenia1
+		Escribir "Bienvenido su contraseña es correcta"
+	SiNo
+		
+		Repetir
+		
+				Escribir "Ingrese su contraseña"
+				Leer contrasenia1
+			Hasta Que contrasenia = contrasenia1
+			
+			Escribir "Contraseña correcta"
+			
+	
+		
+	FinSi
+	
+	
+	
+	
+	Escribir "ingrese el total de su sueldo"
 	leer sueldoi
 	sueldof=sueldoi
-	Escribir "ingrese cantidad de meses del aumento, si no tuvo aumento ingrese 0"
+	Escribir "ingrese cantidad de meses en que se le otorgó un aumento, si no tuvo aumento ingrese 0"
 	Leer meses
 	si meses<>0
 		Para x<-1 hasta meses Con Paso 1
-			Escribir "escriba el porcentaje asignado"
+			Escribir "escriba el porcentaje de aumento otorgado"
 			leer porcentaje
 			aumento=sueldof*porcentaje/100
-			mostrar "aumento es igual a ", aumento
+			mostrar "aumento es de ", aumento, " pesos"
 			sueldof= sueldof+aumento
-			Escribir "El sueldo actual será  ", sueldof
+			Escribir "El sueldo actual será  ", sueldof , " pesos"
 		FinPara
-		Escribir "El incremento ha sido de  ", sueldof-sueldoi
+		Escribir "El incremento en su sueldo ha sido de  ", sueldof-sueldoi, " pesos"
 	FinSi
 	si meses=0
 		sueldof=sueldoi
@@ -41,16 +65,16 @@ Algoritmo porcentaje_aumento
 	Repetir
 		
 		repetir 
-			Escribir "ingrese el tipo de gasto"
+			Escribir "ingrese el tipo de gasto a descontar"
 			Escribir "1- tarjetas , 2- servicios, 3- arreglos, 4-supermercado, 5-salir"
 			
 			Leer gasto
 			si gasto< 1 o gasto >5
-				Escribir "debe ingresar los números indicados"
+				Escribir "debe ingresar los números del 1 al 5"
 			FinSi
 		hasta que gasto >=1 Y gasto<= 5
 		si gasto=5
-			Escribir "Su sueldo restante es  ", sueldof
+			Escribir "Su sueldo restante es de ", sueldof, " pesos"
 			
 			
 			
