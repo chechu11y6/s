@@ -56,9 +56,11 @@ Algoritmo porcentaje_aumento
 			Escribir "El sueldo actual será  ", sueldof , " pesos"
 		FinPara
 		Escribir "El incremento en su sueldo ha sido de  ", sueldof-sueldoi, " pesos"
+		sueldo=sueldof
 	FinSi
 	si meses=0
 		sueldof=sueldoi
+		sueldoi=sueldo
 		
 	FinSi
 	
@@ -155,14 +157,14 @@ Algoritmo porcentaje_aumento
 			FinSegun
 		FinSi
 	Hasta Que suscripcion=6
-	
-	Escribir "de acuerdo a los montos ingresados su sueldo restante es de  ", sueldof, " pesos"
-	Escribir "ha gastado  ", tarjetas, "  en tarjetas, que equivale a  " 
-	Escribir arreglos " pesos en arreglos"
-	Escribir supermercado, " en supermercado"
-	Escribir servicios, " en servicios"
-	Escribir totalsuscrip " en suscripciones"
-	Escribir "El total de gastos que ha tenido durante este período es de  ", tarjetas+servicios+arreglos+supermercado+suscripcion
+	Escribir "su sueldo inicial con los aumentos fue de  ", sueldo, " pesos"
+	Escribir " "
+	Escribir "ha gastado  ", tarjetas, "  en tarjetas, que equivale a  ", tarjetas*100/sueldo, "% de su sueldo" 
+	Escribir arreglos " pesos en arreglos, que equivale a  ", arreglos*100/sueldo, "% de su sueldo"
+	Escribir supermercado, " en supermercado, que equivale a  ", supermercado*100/sueldo, "% de su sueldo"
+	Escribir servicios, " en servicios que equivale a  ", servicios*100/sueldo, "% de su sueldo"
+	Escribir totalsuscrip " en suscripciones, que equivale a  ", totalsuscrip*100/sueldo, "% de su sueldo"
+	Escribir "El total de gastos que ha tenido durante este período es de  ", tarjetas+servicios+arreglos+supermercado+totalsuscrip
 	
 FinAlgoritmo
 
