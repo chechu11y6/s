@@ -40,10 +40,15 @@ Algoritmo porcentaje_aumento
 	
 	Repetir
 		
-		
-		Escribir "ingrese el tipo de gasto"
-		Escribir "1- tarjetas , 2- servicios, 3- arreglos, 4-supermercado, 5-salir"
-		Leer gasto
+		repetir 
+			Escribir "ingrese el tipo de gasto"
+			Escribir "1- tarjetas , 2- servicios, 3- arreglos, 4-supermercado, 5-salir"
+			
+			Leer gasto
+			si gasto< 1 o gasto >5
+				Escribir "debe ingresar los números indicados"
+			FinSi
+		hasta que gasto >=1 Y gasto<= 5
 		si gasto=5
 			Escribir "Su sueldo restante es  ", sueldof
 			
@@ -83,48 +88,52 @@ Algoritmo porcentaje_aumento
 		
 		
 	Hasta Que gasto=5
-	Escribir "suscripciones"
-	Escribir "1- Netflix , 2- Spotify, 3- Disney, 4-Flow, 5-otras o 6-salir"
-	Leer suscripcion
-	si suscripcion=6
-		Escribir "Su sueldo restante es  ", sueldof
+	Escribir "suscripciones"  //problema con suscripcion ver ese bloque por separado ojo con la variable sueldof que viene de antes
+	Repetir
 		
-	SiNo
-		Escribir "ingrese el monto" 
-		Leer monto
 		
-		Segun suscripcion Hacer //tengo un problema con las suscripciones y las sumas de éstas, cierra el proceso en la primera entrada
-			1:
-				sueldof=sueldof-monto
-				totalsuscrip=totalsuscrip+monto
-				Escribir sueldof
-			2:
-				sueldof=sueldof-monto
-				totalsuscrip=totalsuscrip+monto
-				Escribir sueldof
-			3:
-				sueldof=sueldof-monto
-				totalsuscrip=totalsuscrip+monto
-				Escribir sueldof
-			4:
-				sueldof=sueldof-monto
-				totalsuscrip=totalsuscrip+monto
-				
-				Escribir sueldof
-			5:
-				sueldof=sueldof-monto
-				totalsuscrip=totalsuscrip+monto
-				
-				Escribir sueldof
-			De Otro Modo:
-				Escribir "debe escribir un número del 1 al 6 "
-				
-				
-		FinSegun
-	FinSi
+		Escribir "1- Netflix , 2- Spotify, 3- Disney, 4-Flow, 5-otras o 6-salir"
+		Leer suscripcion
+		si suscripcion=6
+			Escribir "Su sueldo restante es  ", sueldof
+			
+		SiNo
+			Escribir "ingrese el monto" 
+			Leer monto
+			
+			Segun suscripcion Hacer //tengo un problema con las suscripciones y las sumas de éstas, cierra el proceso en la primera entrada
+				1:
+					sueldof=sueldof-monto
+					totalsuscrip=totalsuscrip+monto
+					Escribir sueldof
+				2:
+					sueldof=sueldof-monto
+					totalsuscrip=totalsuscrip+monto
+					Escribir sueldof
+				3:
+					sueldof=sueldof-monto
+					totalsuscrip=totalsuscrip+monto
+					Escribir sueldof
+				4:
+					sueldof=sueldof-monto
+					totalsuscrip=totalsuscrip+monto
+					
+					Escribir sueldof
+				5:
+					sueldof=sueldof-monto
+					totalsuscrip=totalsuscrip+monto
+					
+					Escribir sueldof
+				De Otro Modo:
+					Escribir "debe escribir un número del 1 al 6 "
+					
+					
+			FinSegun
+		FinSi
+	Hasta Que suscripcion=6
 	
 	Escribir "de acuerdo a los montos ingresados su sueldo restante es de  ", sueldof, " pesos"
-	Escribir "ha gastado  ", tarjetas, "  en tarjetas"
+	Escribir "ha gastado  ", tarjetas, "  en tarjetas, que equivale a  " 
 	Escribir arreglos " pesos en arreglos"
 	Escribir supermercado, " en supermercado"
 	Escribir servicios, " en servicios"
