@@ -1,5 +1,5 @@
 Algoritmo porcentaje_aumento
-	Definir porcentaje, sueldoi, sueldof, suma, meses, aumento, x, gastos, gasto, monto Como Real
+	Definir porcentaje, sueldoi, sueldof, suma, meses, aumento, x, gastos, gasto, monto, suscripcion, totalsuscrip Como Real
 	
 	porcentaje=0
 	suma=0
@@ -14,6 +14,8 @@ Algoritmo porcentaje_aumento
 	arreglos=0
 	supermercado=0
 	monto=0
+	suscripcion=0
+	totalsuscrip=0
 	
 	Escribir "ingrese sueldo"
 	leer sueldoi
@@ -40,43 +42,94 @@ Algoritmo porcentaje_aumento
 		
 		
 		Escribir "ingrese el tipo de gasto"
-		Escribir "1- tarjetas , 2- servicios, 3- arreglos, 4-supermercado, 5-salir (doble enter luego)"
+		Escribir "1- tarjetas , 2- servicios, 3- arreglos, 4-supermercado, 5-salir"
 		Leer gasto
-		
-		Escribir "ingrese el monto" //tengo un problema cuando ingresa 5 si no es la primera opción pide monto
-		Leer monto
-		
 		si gasto=5
 			Escribir "Su sueldo restante es  ", sueldof
-		SiNo
 			
+			
+			
+			
+		SiNo
+			Escribir "ingrese el monto" //tengo un problema cuando ingresa 5 SOLUCIONADO
+			Leer monto
 			
 			Segun gasto Hacer
 				1:
 					sueldof=sueldof-monto
+					tarjetas=tarjetas+monto
 					
 					Escribir sueldof
 				2:
 					sueldof=sueldof-monto
+					servicios=servicios+monto
 					
 					Escribir sueldof
 				3:
 					sueldof=sueldof-monto
+					arreglos=arreglos+monto
 					Escribir sueldof
 				4:
 					sueldof=sueldof-monto
+					supermercado=supermercado+monto
 					
 					Escribir sueldof
 				De Otro Modo:
-					Escribir "su sueldo sigue intacto y es de  ", sueldof, " o debe escribir un número del 1 al 4 "
+					Escribir "debe escribir un número del 1 al 5 "
 					
 					
 			FinSegun
 		FinSi
+		
+		
 	Hasta Que gasto=5
-	Escribir "sueldo restante=  ",sueldof
+	Escribir "suscripciones"
+	Escribir "1- Netflix , 2- Spotify, 3- Disney, 4-Flow, 5-otras o 6-salir"
+	Leer suscripcion
+	si suscripcion=6
+		Escribir "Su sueldo restante es  ", sueldof
+		
+	SiNo
+		Escribir "ingrese el monto" 
+		Leer monto
+		
+		Segun suscripcion Hacer //tengo un problema con las suscripciones y las sumas de éstas, cierra el proceso en la primera entrada
+			1:
+				sueldof=sueldof-monto
+				totalsuscrip=totalsuscrip+monto
+				Escribir sueldof
+			2:
+				sueldof=sueldof-monto
+				totalsuscrip=totalsuscrip+monto
+				Escribir sueldof
+			3:
+				sueldof=sueldof-monto
+				totalsuscrip=totalsuscrip+monto
+				Escribir sueldof
+			4:
+				sueldof=sueldof-monto
+				totalsuscrip=totalsuscrip+monto
+				
+				Escribir sueldof
+			5:
+				sueldof=sueldof-monto
+				totalsuscrip=totalsuscrip+monto
+				
+				Escribir sueldof
+			De Otro Modo:
+				Escribir "debe escribir un número del 1 al 6 "
+				
+				
+		FinSegun
+	FinSi
 	
-	
+	Escribir "de acuerdo a los montos ingresados su sueldo restante es de  ", sueldof, " pesos"
+	Escribir "ha gastado  ", tarjetas, "  en tarjetas"
+	Escribir arreglos " pesos en arreglos"
+	Escribir supermercado, " en supermercado"
+	Escribir servicios, " en servicios"
+	Escribir totalsuscrip " en suscripciones"
+	Escribir "El total de gastos que ha tenido durante este período es de  ", tarjetas+servicios+arreglos+supermercado+suscripcion
 	
 FinAlgoritmo
 
